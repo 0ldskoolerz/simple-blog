@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blog Theme Preview</title>
+    <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;500;600&display=swap' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        nav {
+            background-color: white;
+            border-bottom: 2px solid #667eea;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        main {
+            min-height: calc(100vh - 200px);
+            padding: 3rem 0;
+        }
+
+        .post {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .post-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .post-meta {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .post-content {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .post-content a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .post-footer {
+            padding-top: 1.5rem;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .post-labels {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .post-label {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #667eea;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .post-label:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .categories-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+
+        .categories-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .categories-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .category-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .category-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .category-name {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .category-count {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #bbb;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 2px solid #667eea;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .post {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class='container'>
+            <h1>My Awesome Blog</h1>
+            <p>Welcome to my simple and clean blog</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class='container'>
+            <a href='#'>Home</a>
+            <a href='#categories'>Categories</a>
+            <a href='#'>Index</a>
+            <a href='#'>Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class='container'>
+            <article class='post'>
+                <h2 class='post-title'>Welcome to Simple Blog Theme</h2>
+                <div class='post-meta'>
+                    <span>October 8, 2024</span>
+                    <span>By Admin</span>
+                </div>
+                <div class='post-content'>
+                    <p>This is a preview of the Simple Blog Theme for Blogger. The theme features a clean, minimal design with modern styling. Posts are centered on the page without sidebars, making for a focused reading experience.</p>
+                    <p>Features include:</p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Responsive design for all devices</li>
+                        <li>Customizable colors and fonts</li>
+                        <li>Clean typography using Google Fonts</li>
+                        <li>Sticky navigation bar</li>
+                        <li>Category/label display</li>
+                    </ul>
+                </div>
+                <div class='post-footer'>
+                    <div class='post-labels'>
+                        <span class='post-label'>Web Design</span>
+                        <span class='post-label'>Blogger</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class='post'>
+                <h2 class='post-title'>Getting Started with the Theme</h2>
+                <div class='post-meta'>
+                    <span>October 7, 2024</span>
+                    <span>By Admin</span>
+                </div>
+                <div class='post-content'>
+                    <p>To install this theme on your Blogger blog, simply copy the theme.xml file content and paste it into your Blogger theme editor. Full installation instructions are available in the README.md file.</p>
+                </div>
+                <div class='post-footer'>
+                    <div class='post-labels'>
+                        <span class='post-label'>Tutorial</span>
+                        <span class='post-label'>Installation</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class='categories-section'>
+            <h3 class='categories-title'>Categories</h3>
+            <div class='categories-list'>
+                <a class='category-item'>
+                    <span class='category-name'>Web Design</span>
+                    <span class='category-count'>5 posts</span>
+                </a>
+                <a class='category-item'>
+                    <span class='category-name'>Blogger</span>
+                    <span class='category-count'>3 posts</span>
+                </a>
+                <a class='category-item'>
+                    <span class='category-name'>Tutorial</span>
+                    <span class='category-count'>8 posts</span>
+                </a>
+                <a class='category-item'>
+                    <span class='category-name'>Tips & Tricks</span>
+                    <span class='category-count'>4 posts</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class='container'>
+            <p>&copy; 2024 My Awesome Blog. All rights reserved.</p>
+            <p>Powered by <a href='https://www.blogger.com'>Blogger</a></p>
+        </div>
+    </footer>
+</body>
+</html>
