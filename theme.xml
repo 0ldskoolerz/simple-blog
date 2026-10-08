@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+    <meta charset='utf-8'/>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    <title><data:blog.pageTitle/></title>
+    <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;500;600&display=swap' rel='stylesheet'/>
+    <b:skin>
+        <![CDATA[
+/* ============================================
+   SIMPLE BLOG THEME - Blogger Template
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   HEADER & BANNER
+   ============================================ */
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.95;
+}
+
+/* ============================================
+   NAVIGATION BAR
+   ============================================ */
+
+nav {
+    background-color: white;
+    border-bottom: 2px solid #667eea;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+nav .container {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+
+nav a {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+    color: #667eea;
+    border-bottom-color: #667eea;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+
+main {
+    min-height: calc(100vh - 200px);
+    padding: 3rem 0;
+}
+
+.post {
+    background: white;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.post-title a {
+    text-decoration: none;
+    color: #1a1a1a;
+    transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+    color: #667eea;
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.post-meta span {
+    margin-right: 1.5rem;
+}
+
+.post-content {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.post-content a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.post-content a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+.post-footer {
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.post-labels {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.post-label {
+    display: inline-block;
+    background: #f0f0f0;
+    color: #667eea;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.post-label:hover {
+    background: #667eea;
+    color: white;
+}
+
+.read-more {
+    display: inline-block;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #764ba2;
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+
+.blog-pager {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.blog-pager a {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    margin: 0 0.5rem;
+    background: #667eea;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.blog-pager a:hover {
+    background: #764ba2;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   CATEGORIES SECTION
+   ============================================ */
+
+.categories-section {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+.categories-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+}
+
+.categories-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.category-item {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.category-name {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.category-count {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    background-color: #2c3e50;
+    color: #bbb;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
+    border-top: 2px solid #667eea;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #764ba2;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav a {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .post {
+        padding: 1.5rem;
+    }
+
+    .post-title {
+        font-size: 1.4rem;
+    }
+
+    .categories-list {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .post-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+        ]]>
+    </b:skin>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class='container'>
+            <h1><data:blog.title/></h1>
+            <p><data:blog.description/></p>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class='container'>
+            <a href='/'>Home</a>
+            <a href='#categories'>Categories</a>
+            <a href='/search'>Index</a>
+            <a href='https://oldskoolerz.blogspot.com/p/contact.html'>Contact</a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class='container'>
+            <b:section id='main' class='main-section' showaddelement='no'>
+                <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
+                    <b:includable id='main'>
+                        <b:loop values='data:posts' var='post'>
+                            <b:if cond='data:post.isVisible'>
+                                <article class='post' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+                                    <h2 class='post-title' itemprop='headline'>
+                                        <a expr:href='data:post.url'><data:post.title/></a>
+                                    </h2>
+                                    
+                                    <div class='post-meta'>
+                                        <span class='post-date'>
+                                            <data:post.dateHeader/>
+                                        </span>
+                                        <span class='post-author' itemprop='author'>
+                                            <data:post.author/>
+                                        </span>
+                                    </div>
+
+                                    <div class='post-content' itemprop='articleBody'>
+                                        <b:if cond='data:post.hasJumpLink'>
+                                            <data:post.excerpt/>
+                                        </b:if>
+                                        <b:if cond='!data:post.hasJumpLink'>
+                                            <data:post.body/>
+                                        </b:if>
+                                    </div>
+
+                                    <div class='post-footer'>
+                                        <div class='post-labels'>
+                                            <b:loop values='data:post.labels' var='label'>
+                                                <a class='post-label' expr:href='data:label.url'><data:label.name/></a>
+                                            </b:loop>
+                                        </div>
+                                        <b:if cond='data:post.hasJumpLink'>
+                                            <a class='read-more' expr:href='data:post.url'>Read More →</a>
+                                        </b:if>
+                                    </div>
+                                </article>
+                            </b:if>
+                        </b:loop>
+
+                        <!-- PAGINATION -->
+                        <div class='blog-pager'>
+                            <b:if cond='data:olderPostUrl'>
+                                <a class='blog-pager-older-link' expr:href='data:olderPostUrl' title='Older Posts'>← Older Posts</a>
+                            </b:if>
+                            <b:if cond='data:newerPostUrl'>
+                                <a class='blog-pager-newer-link' expr:href='data:newerPostUrl' title='Newer Posts'>Newer Posts →</a>
+                            </b:if>
+                        </div>
+                    </b:includable>
+                </b:widget>
+            </b:section>
+
+            <!-- CATEGORIES SECTION -->
+            <b:section id='categories' class='categories-section' showaddelement='no'>
+                <b:widget id='Label1' locked='true' title='Categories' type='Label'>
+                    <b:includable id='main'>
+                        <h3 class='categories-title'>Categories</h3>
+                        <div class='categories-list'>
+                            <b:loop values='data:labels' var='label'>
+                                <a class='category-item' expr:href='data:label.url'>
+                                    <span class='category-name'><data:label.name/></span>
+                                    <span class='category-count'><data:label.count/> posts</span>
+                                </a>
+                            </b:loop>
+                        </div>
+                    </b:includable>
+                </b:widget>
+            </b:section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class='container'>
+            <p>&copy; <data:blog.year/> <data:blog.title/>. All rights reserved.</p>
+            <p>Powered by <a href='https://www.blogger.com'>Blogger</a></p>
+        </div>
+    </footer>
+</body>
+</html>
