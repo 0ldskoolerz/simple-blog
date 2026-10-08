@@ -4,10 +4,9 @@
     <meta charset='utf-8'/>
     <meta content='width=device-width, initial-scale=1' name='viewport'/>
     <title><data:blog.pageTitle/></title>
-    <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Open+Sans:wght@400;500;600&amp;display=swap' rel='stylesheet'/>
     <b:skin>
         <![CDATA[
-/* SIMPLE BLOG THEME - Blogger Template */
+/* SIMPLE BLOG THEME - Ultra Safe Edition */
 
 * {
     margin: 0;
@@ -20,7 +19,7 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f5f5f5;
@@ -32,10 +31,10 @@ body {
     padding: 0 20px;
 }
 
-/* HEADER AND BANNER */
+/* HEADER BANNER */
 
 header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-color: #667eea;
     color: white;
     padding: 3rem 0;
     text-align: center;
@@ -43,9 +42,8 @@ header {
 }
 
 header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: bold;
     margin-bottom: 0.5rem;
     letter-spacing: -1px;
 }
@@ -55,31 +53,36 @@ header p {
     opacity: 0.95;
 }
 
-/* NAVIGATION BAR */
+/* NAVIGATION */
 
 nav {
     background-color: white;
-    border-bottom: 2px solid #667eea;
+    border-bottom: 3px solid #667eea;
     position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-nav .container {
-    display: flex;
-    justify-content: center;
-    gap: 0;
+nav ul {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
 }
 
 nav a {
-    display: inline-block;
+    display: block;
     padding: 1rem 1.5rem;
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    transition: all 0.3s ease;
     border-bottom: 3px solid transparent;
+    transition: all 0.3s;
 }
 
 nav a:hover {
@@ -98,27 +101,26 @@ main {
     background: white;
     padding: 2.5rem;
     margin-bottom: 2rem;
-    border-radius: 8px;
+    border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.post-title {
-    font-family: 'Playfair Display', serif;
+.post h2 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
     color: #1a1a1a;
+    font-weight: bold;
 }
 
-.post-title a {
+.post h2 a {
     text-decoration: none;
     color: #1a1a1a;
-    transition: color 0.3s ease;
 }
 
-.post-title a:hover {
+.post h2 a:hover {
     color: #667eea;
 }
 
@@ -144,7 +146,6 @@ main {
 .post-content a {
     color: #667eea;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .post-content a:hover {
@@ -172,11 +173,11 @@ main {
     display: inline-block;
     background: #f0f0f0;
     color: #667eea;
-    padding: 0.3rem 0.8rem;
+    padding: 0.4rem 0.9rem;
     border-radius: 20px;
     font-size: 0.85rem;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
 }
 
 .post-label:hover {
@@ -185,11 +186,9 @@ main {
 }
 
 .read-more {
-    display: inline-block;
     color: #667eea;
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
+    font-weight: bold;
 }
 
 .read-more:hover {
@@ -211,12 +210,11 @@ main {
     color: white;
     text-decoration: none;
     border-radius: 25px;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
 }
 
 .blog-pager a:hover {
-    background: #764ba2;
-    transform: translateY(-2px);
+    background: #555;
 }
 
 /* CATEGORIES SECTION */
@@ -224,42 +222,42 @@ main {
 .categories-section {
     background: white;
     padding: 2.5rem;
-    border-radius: 8px;
+    border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     max-width: 800px;
     margin: 3rem auto;
 }
 
-.categories-title {
-    font-family: 'Playfair Display', serif;
+.categories-section h3 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     color: #1a1a1a;
+    font-weight: bold;
 }
 
 .categories-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 1rem;
 }
 
 .category-item {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #667eea;
     color: white;
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: 6px;
     text-align: center;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
 }
 
 .category-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    background: #764ba2;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
 }
 
 .category-name {
-    font-weight: 600;
+    font-weight: bold;
     display: block;
     margin-bottom: 0.3rem;
 }
@@ -277,7 +275,7 @@ footer {
     padding: 2rem 0;
     text-align: center;
     margin-top: 3rem;
-    border-top: 2px solid #667eea;
+    border-top: 3px solid #667eea;
 }
 
 footer p {
@@ -287,16 +285,15 @@ footer p {
 footer a {
     color: #667eea;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #764ba2;
+    color: white;
 }
 
 /* RESPONSIVE */
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     header h1 {
         font-size: 1.8rem;
     }
@@ -310,12 +307,12 @@ footer a:hover {
         padding: 1.5rem;
     }
 
-    .post-title {
+    .post h2 {
         font-size: 1.4rem;
     }
 
     .categories-list {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
     }
 
     .post-footer {
@@ -328,6 +325,8 @@ footer a:hover {
     </b:skin>
 </head>
 <body>
+
+    <!-- HEADER -->
     <header>
         <div class='container'>
             <h1><data:blog.title/></h1>
@@ -335,15 +334,19 @@ footer a:hover {
         </div>
     </header>
 
+    <!-- NAVIGATION -->
     <nav>
         <div class='container'>
-            <a href='/'>Inicio</a>
-            <a href='#categories'>Categorias</a>
-            <a href='/search'>Indice</a>
-            <a href='#'>Contacto</a>
+            <ul>
+                <li><a href='/'>Inicio</a></li>
+                <li><a href='#categories'>Categorias</a></li>
+                <li><a href='/search'>Indice</a></li>
+                <li><a href='#'>Contacto</a></li>
+            </ul>
         </div>
     </nav>
 
+    <!-- MAIN CONTENT -->
     <main>
         <div class='container'>
             <b:section id='main' class='main-section' showaddelement='no'>
@@ -352,17 +355,13 @@ footer a:hover {
                         <b:loop values='data:posts' var='post'>
                             <b:if cond='data:post.isVisible'>
                                 <article class='post'>
-                                    <h2 class='post-title'>
+                                    <h2>
                                         <a expr:href='data:post.url'><data:post.title/></a>
                                     </h2>
                                     
                                     <div class='post-meta'>
-                                        <span class='post-date'>
-                                            <data:post.dateHeader/>
-                                        </span>
-                                        <span class='post-author'>
-                                            <data:post.author/>
-                                        </span>
+                                        <span><data:post.dateHeader/></span>
+                                        <span>Por <data:post.author/></span>
                                     </div>
 
                                     <div class='post-content'>
@@ -390,20 +389,21 @@ footer a:hover {
 
                         <div class='blog-pager'>
                             <b:if cond='data:olderPostUrl'>
-                                <a class='blog-pager-older-link' expr:href='data:olderPostUrl'>Entradas antiguas</a>
+                                <a expr:href='data:olderPostUrl'>Entradas antiguas</a>
                             </b:if>
                             <b:if cond='data:newerPostUrl'>
-                                <a class='blog-pager-newer-link' expr:href='data:newerPostUrl'>Entradas nuevas</a>
+                                <a expr:href='data:newerPostUrl'>Entradas nuevas</a>
                             </b:if>
                         </div>
                     </b:includable>
                 </b:widget>
             </b:section>
 
+            <!-- CATEGORIES SECTION -->
             <b:section id='categories' class='categories-section' showaddelement='no'>
                 <b:widget id='Label1' locked='true' title='Categorias' type='Label'>
                     <b:includable id='main'>
-                        <h3 class='categories-title'>Categorias</h3>
+                        <h3>Categorias</h3>
                         <div class='categories-list'>
                             <b:loop values='data:labels' var='label'>
                                 <a class='category-item' expr:href='data:label.url'>
@@ -418,11 +418,13 @@ footer a:hover {
         </div>
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class='container'>
-            <p>Copyright <data:blog.year/> <data:blog.title/>. All rights reserved.</p>
+            <p>Copyright <data:blog.year/> <data:blog.title/>. Todos los derechos reservados.</p>
             <p>Powered by <a href='https://www.blogger.com'>Blogger</a></p>
         </div>
     </footer>
+
 </body>
 </html>
