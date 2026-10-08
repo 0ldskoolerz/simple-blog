@@ -4,12 +4,10 @@
     <meta charset='utf-8'/>
     <meta content='width=device-width, initial-scale=1' name='viewport'/>
     <title><data:blog.pageTitle/></title>
-    <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;500;600&display=swap' rel='stylesheet'/>
+    <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Open+Sans:wght@400;500;600&amp;display=swap' rel='stylesheet'/>
     <b:skin>
         <![CDATA[
-/* ============================================
-   SIMPLE BLOG THEME - Blogger Template
-   ============================================ */
+/* SIMPLE BLOG THEME - Blogger Template */
 
 * {
     margin: 0;
@@ -34,9 +32,7 @@ body {
     padding: 0 20px;
 }
 
-/* ============================================
-   HEADER & BANNER
-   ============================================ */
+/* HEADER AND BANNER */
 
 header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -59,9 +55,7 @@ header p {
     opacity: 0.95;
 }
 
-/* ============================================
-   NAVIGATION BAR
-   ============================================ */
+/* NAVIGATION BAR */
 
 nav {
     background-color: white;
@@ -93,9 +87,7 @@ nav a:hover {
     border-bottom-color: #667eea;
 }
 
-/* ============================================
-   MAIN CONTENT
-   ============================================ */
+/* MAIN CONTENT */
 
 main {
     min-height: calc(100vh - 200px);
@@ -204,9 +196,7 @@ main {
     color: #764ba2;
 }
 
-/* ============================================
-   PAGINATION
-   ============================================ */
+/* PAGINATION */
 
 .blog-pager {
     text-align: center;
@@ -229,9 +219,7 @@ main {
     transform: translateY(-2px);
 }
 
-/* ============================================
-   CATEGORIES SECTION
-   ============================================ */
+/* CATEGORIES SECTION */
 
 .categories-section {
     background: white;
@@ -281,9 +269,7 @@ main {
     opacity: 0.9;
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
+/* FOOTER */
 
 footer {
     background-color: #2c3e50;
@@ -308,9 +294,7 @@ footer a:hover {
     color: #764ba2;
 }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
+/* RESPONSIVE */
 
 @media (max-width: 768px) {
     header h1 {
@@ -344,7 +328,6 @@ footer a:hover {
     </b:skin>
 </head>
 <body>
-    <!-- HEADER -->
     <header>
         <div class='container'>
             <h1><data:blog.title/></h1>
@@ -352,17 +335,15 @@ footer a:hover {
         </div>
     </header>
 
-    <!-- NAVIGATION -->
     <nav>
         <div class='container'>
-            <a href='/'>Home</a>
-            <a href='#categories'>Categories</a>
-            <a href='/search'>Index</a>
-            <a href='https://oldskoolerz.blogspot.com/p/contact.html'>Contact</a>
+            <a href='/'>Inicio</a>
+            <a href='#categories'>Categorias</a>
+            <a href='/search'>Indice</a>
+            <a href='#'>Contacto</a>
         </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
     <main>
         <div class='container'>
             <b:section id='main' class='main-section' showaddelement='no'>
@@ -370,8 +351,8 @@ footer a:hover {
                     <b:includable id='main'>
                         <b:loop values='data:posts' var='post'>
                             <b:if cond='data:post.isVisible'>
-                                <article class='post' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-                                    <h2 class='post-title' itemprop='headline'>
+                                <article class='post'>
+                                    <h2 class='post-title'>
                                         <a expr:href='data:post.url'><data:post.title/></a>
                                     </h2>
                                     
@@ -379,12 +360,12 @@ footer a:hover {
                                         <span class='post-date'>
                                             <data:post.dateHeader/>
                                         </span>
-                                        <span class='post-author' itemprop='author'>
+                                        <span class='post-author'>
                                             <data:post.author/>
                                         </span>
                                     </div>
 
-                                    <div class='post-content' itemprop='articleBody'>
+                                    <div class='post-content'>
                                         <b:if cond='data:post.hasJumpLink'>
                                             <data:post.excerpt/>
                                         </b:if>
@@ -400,31 +381,29 @@ footer a:hover {
                                             </b:loop>
                                         </div>
                                         <b:if cond='data:post.hasJumpLink'>
-                                            <a class='read-more' expr:href='data:post.url'>Read More →</a>
+                                            <a class='read-more' expr:href='data:post.url'>Leer mas</a>
                                         </b:if>
                                     </div>
                                 </article>
                             </b:if>
                         </b:loop>
 
-                        <!-- PAGINATION -->
                         <div class='blog-pager'>
                             <b:if cond='data:olderPostUrl'>
-                                <a class='blog-pager-older-link' expr:href='data:olderPostUrl' title='Older Posts'>← Older Posts</a>
+                                <a class='blog-pager-older-link' expr:href='data:olderPostUrl'>Entradas antiguas</a>
                             </b:if>
                             <b:if cond='data:newerPostUrl'>
-                                <a class='blog-pager-newer-link' expr:href='data:newerPostUrl' title='Newer Posts'>Newer Posts →</a>
+                                <a class='blog-pager-newer-link' expr:href='data:newerPostUrl'>Entradas nuevas</a>
                             </b:if>
                         </div>
                     </b:includable>
                 </b:widget>
             </b:section>
 
-            <!-- CATEGORIES SECTION -->
             <b:section id='categories' class='categories-section' showaddelement='no'>
-                <b:widget id='Label1' locked='true' title='Categories' type='Label'>
+                <b:widget id='Label1' locked='true' title='Categorias' type='Label'>
                     <b:includable id='main'>
-                        <h3 class='categories-title'>Categories</h3>
+                        <h3 class='categories-title'>Categorias</h3>
                         <div class='categories-list'>
                             <b:loop values='data:labels' var='label'>
                                 <a class='category-item' expr:href='data:label.url'>
@@ -439,10 +418,9 @@ footer a:hover {
         </div>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <div class='container'>
-            <p>&copy; <data:blog.year/> <data:blog.title/>. All rights reserved.</p>
+            <p>Copyright <data:blog.year/> <data:blog.title/>. All rights reserved.</p>
             <p>Powered by <a href='https://www.blogger.com'>Blogger</a></p>
         </div>
     </footer>
